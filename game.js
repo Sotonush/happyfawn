@@ -52,7 +52,7 @@
     }
     playfield.innerHTML = '';
     messageEl.textContent = skipped
-      ? 'Хорошо, идём дальше! 💕'
+      ? 'Хорошо, идём дальше! ✨'
       : 'Идеальный улов! Ты заслужила открытку 🏆';
     nextButton.style.visibility = 'visible';
     skipLink.style.display = 'none';
