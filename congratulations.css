@@ -3,25 +3,45 @@ canvas {
 	top: 0;
 	left: 0;
 }
-p {
-	margin: 0 0;
-	position: absolute;
-	font: 16px Verdana;
-	color: #eee;
-	height: 25px;
-	top: calc( 100vh - 30px );
-	text-shadow: 0 0 2px white;
+
+body {
+	margin: 0;
+	overflow: hidden;
+	font-family: var(--font-body);
 }
+
+p {
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: clamp(14px, 2.5vw, 18px);
+	color: var(--color-foreground);
+	height: 25px;
+	top: calc(100vh - 40px);
+}
+
 p a {
 	text-decoration: none;
-	color: #aaa;
+	color: var(--color-primary);
+	font-weight: 600;
+	transition: color var(--transition-fast);
 }
+
+p a:hover {
+	color: var(--color-accent);
+}
+
+p a:focus-visible {
+	outline: 3px solid var(--color-ring);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
 span {
-	font-size: 11px;
+	font-size: clamp(16px, 4vw, 22px);
 }
+
 p > a:first-of-type {
-	font-size: 20px;
-}
-body {
-	overflow: hidden;
+	font-size: clamp(16px, 3vw, 20px);
 }

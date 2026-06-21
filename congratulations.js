@@ -6,7 +6,7 @@ var w = c.width = window.innerWidth,
 		hh = h / 2,
 
 		opts = {
-			strings: [ 'СЧАСТЛИВОГО', 'ДНЯ РОЖДЕНИЯ,','СОЛНЦЕ!' ],
+			strings: [ 'СЧАСТЛИВОГО', 'ДНЯ РОЖДЕНИЯ,','КСЮША!' ],
 			charSize: 30,
 			charSpacing: 35,
 			lineHeight: 40,
@@ -55,10 +55,21 @@ var w = c.width = window.innerWidth,
 
 		letters = [];
 
-        opts.charSize = 50;  
-        opts.charSpacing = 50;  
-        ctx.font = opts.charSize + 'px Verdana';  
-        
+function fitCharMetrics( width ){
+
+	var longest = 0;
+	for( var k = 0; k < opts.strings.length; ++k )
+		longest = Math.max( longest, opts.strings[ k ].length );
+
+	var size = Math.min( 50, Math.max( 16, ( width * 0.85 ) / longest ) );
+
+	opts.charSize = size;
+	opts.charSpacing = size;
+	calc.totalWidth = size * longest;
+	ctx.font = opts.charSize + 'px Verdana';
+}
+
+fitCharMetrics( w );
 
 function Letter( char, x, y ){
 	this.char = char;
@@ -383,13 +394,19 @@ function anim(){
 			letters[ l ].reset();
 }
 
-for( var i = 0; i < opts.strings.length; ++i ){
-	for( var j = 0; j < opts.strings[ i ].length; ++j ){
-		letters.push( new Letter( opts.strings[ i ][ j ],
-														j * opts.charSpacing + opts.charSpacing / 2 - opts.strings[ i ].length * opts.charSize / 2,
-														i * opts.lineHeight + opts.lineHeight / 2 - opts.strings.length * opts.lineHeight / 2 ) );
+function buildLetters(){
+
+	letters.length = 0;
+	for( var i = 0; i < opts.strings.length; ++i ){
+		for( var j = 0; j < opts.strings[ i ].length; ++j ){
+			letters.push( new Letter( opts.strings[ i ][ j ],
+															j * opts.charSpacing + opts.charSpacing / 2 - opts.strings[ i ].length * opts.charSize / 2,
+															i * opts.lineHeight + opts.lineHeight / 2 - opts.strings.length * opts.lineHeight / 2 ) );
+		}
 	}
 }
+
+buildLetters();
 
 anim();
 
@@ -401,8 +418,7 @@ window.addEventListener( 'resize', function(){
 	hw = w / 2;
 	hh = h / 2;
 
-	opts.charSize = 50;  
-opts.charSpacing = 50;  
-ctx.font = opts.charSize + 'px Verdana';  
+	fitCharMetrics( w );
+	buildLetters();
 
 })

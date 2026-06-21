@@ -1,0 +1,36 @@
+:root {
+    --color-primary: #E11D48;
+    --color-on-primary: #FFFFFF;
+    --color-secondary: #FB7185;
+    --color-accent: #EA580C;
+    --color-background: #FFF1F2;
+    --color-foreground: #881337;
+    --color-muted: #FFE4E6;
+    --color-border: #FECDD3;
+    --color-ring: #E11D48;
+
+    --font-heading: 'Caveat', cursive;
+    --font-body: 'Quicksand', sans-serif;
+
+    --transition-fast: 200ms ease-out;
+}
+
+.page-transitions body {
+    opacity: 0;
+}
+
+.page-transitions body.page-loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

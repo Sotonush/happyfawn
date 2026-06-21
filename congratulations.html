@@ -1,50 +1,27 @@
 <!DOCTYPE html>
-<html >
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>С Днем Рождения!</title>
+  <meta name="description" content="Поздравление с Днём Рождения для Ксюши">
+  <meta property="og:title" content="С Днём Рождения, Ксюша!">
+  <meta property="og:description" content="Поздравление с Днём Рождения для Ксюши">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#E11D48">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="congratulations.css">
 
-
-
-      <style>
-      canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-p {
-	margin: 0 0;
-	position: absolute;
-	font: 16px Verdana;
-	color: #eee;
-	height: 25px;
-	top: calc( 100vh - 30px );
-	text-shadow: 0 0 2px white;
-}
-p a {
-	text-decoration: none;
-	color: #aaa;
-}
-span {
-	font-size: 25px;
-}
-p > a:first-of-type {
-	font-size: 20px;
-}
-body {
-	overflow: hidden;
-}
-    </style>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  <script src="transitions.js"></script>
 
 </head>
 
-<body>
+<body oncontextmenu="return false">
   <canvas id=c></canvas>
-<p>Вот такая вот тема  <span><a href="card.html">=============> Нажми сюда <=============</a></span> </p>
+  <p>Вот такая вот тема  <span><a href="game.html">=============> Нажми сюда <=============</a></span> </p>
 
-    <script src="congratulations.js"></script>
-<body oncontextmenu="return false"></body>
+  <script src="congratulations.js"></script>
 </body>
 </html>

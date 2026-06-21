@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Открытка</title>
-    <link href="https://fonts.googleapis.com/css2?family=Marmelad&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="firework-left"></div> <!-- Фейерверк слева -->
-    <div class="firework-right"></div> <!-- Фейерверк справа -->
-
+    <meta name="description" content="Открытка с поздравлением для Ксюши" />
+    <meta property="og:title" content="Открытка для Ксюши" />
+    <meta
+      property="og:description"
+      content="Открытка с поздравлением для Ксюши"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#E11D48" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="transitions.js"></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="text-wrapper">
-            <div class="typing-container">
-                <span class="typing-text"></span>
-            </div>
-    
-            <button class="next-page-button" onclick="window.location.href = 'congratulations.html';">мряв</button>
+      <div class="text-wrapper">
+        <div class="typing-container">
+          <span class="typing-text"></span
+          ><span class="typing-cursor" aria-hidden="true">|</span>
         </div>
+
+        <button class="next-page-button" data-href="congratulations.html">
+          мряв
+        </button>
+      </div>
     </div>
-    
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
